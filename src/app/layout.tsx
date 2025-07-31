@@ -20,12 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} antialiased min-h-screen`}
-        style={{
-          background: 'linear-gradient(135deg, #001122 0%, #003366 50%, #006699 100%)'
-        }}
-      >
+      <body className={`${inter.variable} antialiased min-h-screen bg-transparent`}> 
         {children}
       </body>
     </html>

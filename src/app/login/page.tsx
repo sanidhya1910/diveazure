@@ -34,9 +34,25 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
+      {/* Ocean Background - Matching main page */}
+      <div className="fixed inset-0 bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 -z-50"></div>
+      
+      {/* Gentle underwater effect */}
+      <div className="fixed inset-0 -z-40 opacity-30">
+        <div className="absolute inset-0 bg-[conic-gradient(from_0deg,transparent,rgba(6,182,212,0.1),transparent)] animate-spin [animation-duration:60s]"></div>
+      </div>
+      
+      {/* Floating bubbles */}
+      <div className="fixed inset-0 -z-30">
+        <div className="bubble absolute top-3/4 left-1/4 w-2 h-2" style={{animationDelay: '0s'}}></div>
+        <div className="bubble absolute top-2/3 left-3/4 w-3 h-3" style={{animationDelay: '2s'}}></div>
+        <div className="bubble absolute top-1/2 left-1/3 w-1 h-1" style={{animationDelay: '4s'}}></div>
+        <div className="bubble absolute top-4/5 right-1/4 w-2 h-2" style={{animationDelay: '1s'}}></div>
+        <div className="bubble absolute top-1/3 right-1/3 w-1 h-1" style={{animationDelay: '3s'}}></div>
+      </div>
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
+      <nav className="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-cyan-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2">
@@ -62,7 +78,7 @@ export default function Login() {
             Back to Home
           </Link>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-cyan-500/20">
             <div className="text-center mb-8">
               <div className="flex justify-center mb-4">
                 <div className="bg-cyan-600/20 p-3 rounded-full">
@@ -83,7 +99,7 @@ export default function Login() {
                     required
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-cyan-400"
+                    className="w-full pl-12 pr-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400"
                     placeholder="Enter your email"
                   />
                 </div>
@@ -98,7 +114,7 @@ export default function Login() {
                     required
                     value={formData.password}
                     onChange={(e) => handleInputChange('password', e.target.value)}
-                    className="w-full pl-12 pr-12 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-cyan-400"
+                    className="w-full pl-12 pr-12 py-3 rounded-lg bg-slate-700/50 border border-slate-600 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400"
                     placeholder="Enter your password"
                   />
                   <button
@@ -158,24 +174,24 @@ export default function Login() {
           <div className="mt-8 grid grid-cols-2 gap-4">
             <Link
               href="/courses"
-              className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg p-4 text-center hover:border-cyan-400/50 transition-colors"
+              className="bg-slate-800/30 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-4 text-center hover:border-cyan-400/50 transition-colors"
             >
               <h3 className="font-semibold text-white mb-1">Browse Courses</h3>
-              <p className="text-white/60 text-sm">View our diving programs</p>
+              <p className="text-gray-300 text-sm">View our diving programs</p>
             </Link>
             <Link
               href="/medical"
-              className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-lg p-4 text-center hover:border-cyan-400/50 transition-colors"
+              className="bg-slate-800/30 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-4 text-center hover:border-cyan-400/50 transition-colors"
             >
               <h3 className="font-semibold text-white mb-1">Medical Form</h3>
-              <p className="text-white/60 text-sm">Complete health assessment</p>
+              <p className="text-gray-300 text-sm">Complete health assessment</p>
             </Link>
           </div>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="bg-black/50 backdrop-blur-sm border-t border-white/10 py-12">
+      <footer className="bg-slate-900/50 backdrop-blur-sm border-t border-cyan-500/20 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
